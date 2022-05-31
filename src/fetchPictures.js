@@ -12,7 +12,7 @@ const params = new URLSearchParams({
 export async function fetchPictures(value, page) {
   //   const response = await fetch(`${BASE_URL}?key=${KEY}&q=${value}&${params}&${page}`);
   //   return await response.json();
-  return await axios.get(`${BASE_URL}?key=${KEY}&q=${value}&${params}&${page}`).then(response => {
+  return await axios.get(`${BASE_URL}?key=${KEY}&q=${value}&${params}&page=${page}`).then(response => {
     return response.data;
   });
 }

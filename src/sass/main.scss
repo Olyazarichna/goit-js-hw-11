@@ -8,7 +8,8 @@
 .search-form{
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  padding: 16px;
+  background-color: rgb(152, 205, 226);
 }
 .search-field{
   width: 400px;
@@ -32,15 +33,23 @@
 // }
 
 .list-gallery {
+  margin-top: 0;
   list-style: none;
-  padding: 0;
+  padding-right: 10px;
+  padding-left: 10px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 }
 .card-list {
   border: 1px solid rgb(229, 226, 226);
-  margin: 10px;
+  margin: 0;
+
+  margin-bottom: 10px;
   border-radius: 5px;
+  overflow: hidden;
+}
+.card-list:not(:nth-child(4n+0)){
+  margin-right: 10px;
 }
 .info {
   display: flex;

@@ -24,9 +24,8 @@ async function onFormSubmit(event) {
   event.preventDefault();
   refs.listEl.innerHTML = '';
   searchValue = event.currentTarget.searchQuery.value;
- 
+
   currentPage = 1;
-  console.log(currentPage);
 
   refs.formEl.reset();
   refs.buttonEl.classList.add('hidden');
@@ -51,7 +50,6 @@ async function onFormSubmit(event) {
       gallery.refresh();
       refs.buttonEl.classList.remove('hidden');
     }
-    
   } catch (error) {
     console.log(error.stack);
   }
@@ -77,11 +75,9 @@ async function onLoadMoreClick(event) {
       refs.buttonEl.classList.add('hidden');
       Notiflix.Notify.info("We're sorry, but you've reached the end of search results.");
     } else {
-      
       createMarkup(resp.hits);
       gallery.refresh();
       hits += resp.hits.length;
-      console.log(currentPage);
     }
   } catch (error) {
     console.log(error.stack);

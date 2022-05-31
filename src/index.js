@@ -69,6 +69,7 @@ let gallery = new SimpleLightbox('.gallery a', {
 
 async function onLoadMoreClick(event) {
   try {
+    
     const resp = await fetchPictures(searchValue, currentPage);
 
     if (hits === resp.totalHits) {

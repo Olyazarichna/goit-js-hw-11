@@ -44,11 +44,13 @@
 }
 .info {
   display: flex;
+  justify-content: space-around;
+
 }
 .info-item {
   margin-right: 5px;
   margin-left: 5px;
-  font-size: 12px;
+  font-size: 14px;
   color: darkblue;
 }
 img {

@@ -11,7 +11,7 @@
   margin-top: 20px;
 }
 .search-field{
-  width: 300px;
+  width: 400px;
   height: 40px;
   margin-right: 5px;
   border-color: rgb(8, 163, 224);
@@ -24,11 +24,13 @@
   background-color: orange;
   border: rgb(8, 163, 224);
   border-radius: 3px;
+  width: 100px;
 }
-.gallery{
-  overflow: hidden;
-  border-radius: 5px;
-}
+// .gallery{
+//   overflow: hidden;
+//   border-radius: 5px;
+// }
+
 .list-gallery {
   list-style: none;
   padding: 0;

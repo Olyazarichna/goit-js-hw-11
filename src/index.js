@@ -24,7 +24,7 @@ async function onFormSubmit(event) {
   event.preventDefault();
   refs.listEl.innerHTML = '';
   searchValue = event.currentTarget.searchQuery.value;
-  console.log(searchValue);
+ 
   currentPage = 1;
   console.log(currentPage);
 
@@ -51,6 +51,7 @@ async function onFormSubmit(event) {
       gallery.refresh();
       refs.buttonEl.classList.remove('hidden');
     }
+    
   } catch (error) {
     console.log(error.stack);
   }
@@ -69,17 +70,18 @@ let gallery = new SimpleLightbox('.gallery a', {
 
 async function onLoadMoreClick(event) {
   try {
-    
+    currentPage += 1;
     const resp = await fetchPictures(searchValue, currentPage);
 
     if (hits === resp.totalHits) {
       refs.buttonEl.classList.add('hidden');
       Notiflix.Notify.info("We're sorry, but you've reached the end of search results.");
     } else {
-      currentPage += 1;
+      
       createMarkup(resp.hits);
       gallery.refresh();
       hits += resp.hits.length;
+      console.log(currentPage);
     }
   } catch (error) {
     console.log(error.stack);
